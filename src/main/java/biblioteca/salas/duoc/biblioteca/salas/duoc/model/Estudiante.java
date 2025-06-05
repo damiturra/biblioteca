@@ -11,11 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Estudiante {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_estudiante;
 
-    @Column(nullable = false,unique = false, length = 9)
+    @Column(nullable = false, length = 9)
     private String run;
 
     @Column(nullable = false, length = 100)
@@ -24,17 +25,15 @@ public class Estudiante {
     @Column(length = 100)
     private String correo;
 
-    @Column(nullable = false)
-    private char jornada;
+    @Column(nullable = false, length = 1)
+    private Character jornada;
 
-    @Column
+    @Column(length = 15)
     private Integer telefono;
 
-    @Column(unique = true, length = 100)
-    private String codigoCarrera;
-
     @ManyToOne
-    @JoinColumn(name ="codigo_carrera",nullable = false)
+    @JoinColumn(name = "codigo_carrera", nullable = false)
     private Carrera carrera;
-
 }
+
+

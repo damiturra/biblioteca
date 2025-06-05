@@ -26,9 +26,6 @@ public class Sala {
     @Column (nullable = false)
     private  Integer id_instituto;
 
-    @Column (nullable = false)
-    private  Integer id_tipo;
-
     @ManyToOne
     @JoinColumn(name ="id_tipo",nullable = false)
     private TipoSala tipoSala;
