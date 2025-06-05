@@ -15,7 +15,7 @@ import java.util.Date;
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id_reserva;
 
     @Column(nullable = false)
     private Date fechaSolicitada;
@@ -28,6 +28,15 @@ public class Reserva {
 
     @Column(unique = false)
     private Integer estado;
+
+    @ManyToOne
+    @JoinColumn(name ="id_estudiante",nullable = false)
+    private Estudiante estudiantes;
+
+    @ManyToOne
+    @JoinColumn (name = "codigo", nullable = false)
+    private Sala sala;
+
 
 
 }

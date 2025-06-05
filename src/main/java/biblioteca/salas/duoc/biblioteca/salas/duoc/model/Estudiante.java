@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id_estudiante;
 
     @Column(nullable = false,unique = false, length = 9)
     private String run;
@@ -32,5 +32,9 @@ public class Estudiante {
 
     @Column(unique = true, length = 100)
     private String codigoCarrera;
+
+    @ManyToOne
+    @JoinColumn(name ="codigo_carrera",nullable = false)
+    private Carrera carrera;
 
 }

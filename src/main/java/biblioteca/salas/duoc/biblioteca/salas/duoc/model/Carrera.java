@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Carrera {
     @Id
     @Column(length = 100)
-    private String codigo;
+    private String codigo_carrera;
 
     @Column(length = 100)
     private String nombre;
